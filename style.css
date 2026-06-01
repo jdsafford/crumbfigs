@@ -58,26 +58,6 @@ p {
   text-align: center;
 }
 
-.crumb-box {
-  width: 280px;
-  height: 110px;
-  margin: 0 auto 30px;
-
-  border: 2px solid #7cff7c;
-  border-radius: 28px;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  color: #d6d6d6;
-  letter-spacing: 2px;
-  font-size: 0.85rem;
-
-  background: rgba(30, 35, 32, 0.8);
-  box-shadow: 0 0 22px rgba(124, 255, 124, 0.18);
-}
-
 .home-card h1 {
   font-size: 64px;
   margin: 0 0 18px;
@@ -90,54 +70,6 @@ p {
   margin: 0 auto 30px;
   font-size: 1rem;
   color: #d6d6d6;
-}
-
-/********************
-  NAV LINKS
-********************/
-
-.home-nav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 22px;
-  flex-wrap: wrap;
-  margin: 30px 0;
-}
-
-.home-nav a {
-  font-size: 1.05rem;
-}
-
-.home-nav a:not(:last-child)::after {
-  content: "|";
-  color: #d6d6d6;
-  margin-left: 22px;
-  opacity: 0.55;
-}
-
-/********************
-  PAY BUTTONS
-********************/
-
-.pay-links {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 14px;
-  margin: 35px 0;
-}
-
-.pay-links a {
-  border: 1px solid #56d9ff;
-  border-radius: 999px;
-  padding: 10px 18px;
-  background: rgba(86, 217, 255, 0.08);
-}
-
-.pay-links a:hover {
-  border-color: #7cff7c;
-  background: rgba(124, 255, 124, 0.12);
 }
 
 /********************
@@ -164,6 +96,55 @@ p {
 }
 
 /********************
+  ICON GRID LINKS
+********************/
+
+.icon-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 90px);
+  justify-content: center;
+  gap: 28px;
+  margin: 40px auto;
+}
+
+.icon-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  color: #d6d6d6;
+  font-size: 0.8rem;
+  font-weight: normal;
+  text-align: center;
+}
+
+.icon-link img {
+  width: 62px;
+  height: 62px;
+  object-fit: cover;
+  border-radius: 18px;
+  background: #1e2320;
+  border: 1px solid rgba(124, 255, 124, 0.25);
+  padding: 10px;
+  box-shadow: 0 0 18px rgba(86, 217, 255, 0.12);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.icon-link:hover {
+  color: #7cff7c;
+  text-shadow: none;
+}
+
+.icon-link:hover img {
+  transform: translateY(-4px);
+  border-color: #7cff7c;
+  box-shadow: 0 0 24px rgba(124, 255, 124, 0.35);
+}
+
+/********************
   MOBILE RESPONSIVE
 ********************/
 
@@ -172,28 +153,18 @@ p {
     font-size: 44px;
   }
 
-  .crumb-box {
-    width: 230px;
-    height: 95px;
+  .icon-grid {
+    grid-template-columns: repeat(3, 82px);
+    gap: 24px 18px;
   }
 
-  .home-nav {
-    gap: 12px;
+  .icon-link img {
+    width: 58px;
+    height: 58px;
+    border-radius: 16px;
   }
 
-  .home-nav a {
-    font-size: 1rem;
-  }
-
-  .home-nav a:not(:last-child)::after {
-    margin-left: 12px;
-  }
-
-  .pay-links {
-    flex-direction: column;
-  }
-
-  .pay-links a {
-    width: 100%;
+  .icon-link {
+    font-size: 0.75rem;
   }
 }
